@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>注册领取钱包</title>
+		<script src="js/flexible.min.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="css/base.css" />
+		<link rel="stylesheet" type="text/css" href="dist/css/comment.css" />
+		<link rel="stylesheet" type="text/css" href="dist/css/feedback.css" />
+		<link rel="stylesheet" type="text/css" href="dist/css/invite.css" />
+		<script src="js/jquery-1.11.3.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div class="content invite-page">
+			<div class="main-box">
+				<div class="main">
+					<img src="dist/img/invite-logo.png" class="logo" />
+					<p class="p1">区块链游戏广场</p>
+					<p class="p2">首个免费区块链游戏平台</p>
+					<img src="dist/img/invite-pic1.png" class="pic1" />
+					<img src="dist/img/invite-pic2.png" class="pic2" />
+					<div class="pic3">
+						<p class="p3">BGS邀你免费领取区块链钱包</p>
+						<input type="text" placeholder="请输入领取手机号" id="invitePhone" />
+					</div>
+					<img src="dist/img/invite-pic4.png" class="pic4" />
+					<div class="rule-list">
+						<div class="rule-title">
+							活动规则：
+						</div>
+						<ul>
+							<li>
+								<span>1.</span>
+								<p>新用户注册领取免费EOS、ETH和BGS钱包；</p>
+							</li>
+							<li>
+								<span>2.</span>
+								<p>新注册用户获取BGS奖励，可提取；</p>
+							</li>
+							<li>
+								<span>3.</span>
+								<p>本活动仅限新用户参加；</p>
+							</li>
+							<li>
+								<span>4.</span>
+								<p>本活动由庞加莱基金会组织，如对活动规则有任何疑问， 请联系我们。</p>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="hintToast"></div>
+		</div>
+		<script src="js/base.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function() {
+				$('.pic4').click(function() {
+					if($('#invitePhone').val().length > 0) {
+						var phoneNum = $('#invitePhone').val();
+						var invitedCode = getQueryString('invitedCode') || '123456';
+						$.ajax({
+							url: baseUrl + "appsite/preInviter.do",
+							type: "post",
+							data: {
+								phoneNum: phoneNum,
+								invitedCode: invitedCode,
+							},
+							success: function(res) {
+								if(res.success) {
+									if(browser.versions.ios || browser.versions.iPhone || browser.versions.iPad) {
+										window.location.href='https://fir.im/jxqr?utm_source=fir&openId=oGB0Cj-ea_rNjSRjRKXOVBwecHlk';
+									} else if(browser.versions.android) {
+										window.location.href='https://fir.im/l7j6';
+									}
+								}
+							}
+						})
+					} else {
+						$('.hintToast').text('请填写您的手机号');
+						$('.hintToast').show();
+						setTimeout(function() {
+							$('.hintToast').hide();
+						}, 2000)
+					}
+				})
+				$('.btn').click(function() {
+					if(browser.versions.ios || browser.versions.iPhone || browser.versions.iPad) {
+						window.webkit.messageHandlers.gotoService.postMessage("");
+					} else if(browser.versions.android) {
+						window.android.contact();
+					}
+				})
+			})
+		</script>
+	</body>
+	</body>
+
+</html>

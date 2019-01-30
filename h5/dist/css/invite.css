@@ -1,0 +1,162 @@
+html,body{
+	background: #2a0d38;
+}
+.invite-page {
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+}
+
+.invite-page .header {
+	width: 100%;
+	background: url(../img/invite-top-bg.png);
+	background-size: 100% 100%;
+	padding-top: 0.9rem;
+}
+
+.invite-page .main-box {
+	width: 100%;
+	height:100%;
+	position: relative;
+	background: url(../img/invite-main-bg.png);
+	background-size: 100% 100%;
+}
+
+.invite-page .main {
+	width: 9.9998rem;
+	margin: 0 auto;
+	position: relative;
+	height: auto;
+	overflow: hidden;
+}
+
+.invite-page .logo {
+	width: 1.0664rem;
+	height: 1.0664rem;
+	position: absolute;
+	left: 0.4rem;
+	top: 0.64rem;
+}
+
+.invite-page .p1 {
+	width: 2.86rem;
+	height: 0.533rem;
+	font-size: 0.373rem;
+	color: rgba(238, 238, 238, 1);
+	line-height: 0.533rem;
+	position: absolute;
+	left: 1.73rem;
+	top: 0.64rem;
+}
+
+.invite-page .p2 {
+	width: 4.66rem;
+	height: 0.533rem;
+	font-size: 0.373rem;
+	color: rgba(142, 115, 71, 1);
+	line-height: 0.533rem;
+	position: absolute;
+	left: 1.73rem;
+	top: 1.173rem;
+}
+
+.invite-page .pic1 {
+	width: 4.08rem;
+	height: 5rem;
+	position: absolute;
+	left: 1rem;
+	top: 3.58rem;
+}
+
+.invite-page .pic2 {
+	width: 5.145rem;
+	height: 2.72rem;
+	position: absolute;
+	right: 0.24rem;
+	top: 4.5rem;
+}
+
+.invite-page .pic3 {
+	width: 9.34rem;
+	height: 2.99rem;
+	position: absolute;
+	left: 50%;
+	margin-left: -4.67rem;
+	top: 6.8rem;
+	z-index: 10;
+	background: url(../img/invite-pic3-bg.png);
+	background-size: 100% 100%;
+	overflow: hidden;
+	padding-top: 0.53rem;
+}
+
+.invite-page .p3 {
+	width: 6.65rem;
+	height: 0.58rem;
+	line-height: 0.58rem;
+	margin: 0 auto;
+	font-size: 0.40rem;
+	color: #fff;
+	text-align: center;
+}
+
+.invite-page .pic3 input {
+	display: block;
+	width: 5.8rem;
+	height: 0.96rem;
+	background: transparent;
+	margin: 0.36rem auto;
+	color: #FF6934;
+	text-align: center;
+	font-size: 0.373rem;
+}
+
+.invite-page input::-webkit-input-placeholder{
+	color: #FF6934;
+}
+.invite-page input:-moz-placeholder{
+	color: #FF6934;
+}
+.invite-page input:-ms-input-placeholder{
+	color: #FF6934;
+}
+.invite-page .pic4 {
+	display: block;
+	width: 4.53rem;
+	height: 1.064rem;
+	margin: 0 auto;
+	margin-top: 10.2rem;
+}
+.rule-list{
+	width: 100%;
+	height: auto;
+	margin-top: 0.673rem;
+}
+.rule-title{
+	width: 100%;
+	height: auto;
+	margin-top: 0.773rem;
+	font-size: 0.364rem;
+	color: #BB9962;
+	padding-left: 0.39rem;
+	margin-bottom: 0.18rem;
+}
+.rule-list ul{
+	width: 100%;
+	height: auto;
+}
+.rule-list li{
+	line-height: 0.53rem;
+	color: #bbb;
+	overflow: hidden;
+}
+.rule-list li span{
+	float: left;
+	width: 0.8rem;
+	padding-left: 0.4rem;
+	color: #BB9962;
+}
+.rule-list li p{
+	float: left;
+	width: calc( 100% - 1.2rem );
+}

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+		<script src="js/jquery-1.11.3.js" type="text/javascript" charset="utf-8"></script>
+		<title></title>
+		<style type="text/css">
+			#POP800_PANEL_DIV{
+				opacity: 0 !important;
+			}
+		</style>
+	</head>
+
+	<body>
+		<script type="text/javascript">
+			function getQueryString(name) {
+				var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+				var reg_rewrite = new RegExp("(^|/)" + name + "/([^/]*)(/|$)", "i");
+				var r = window.location.search.substr(1).match(reg);
+				var q = window.location.pathname.substr(1).match(reg_rewrite);
+				if(r != null) {
+					return unescape(r[2]);
+				} else if(q != null) {
+					return unescape(q[2]);
+				} else {
+					return '';
+				}
+			}
+			var userid = getQueryString('idText') || '12';
+			var username = getQueryString('nameText') || '23';
+			var srcText = "http://api.pop800.com/800.js?n=457660&s=01&p=l&l=cn&userid=" + userid + "&username=" + username;
+			document.write('<script type="text/javascript" src=' + srcText + '><\/script>')
+			setTimeout(function() {
+				document.getElementById('POP800_GROUP_0').children[0].onclick()
+				window.frames["#PFPOP800_MINI_WIN"].document.getElementByIdx_x("chatHeader").style.paddingTop='20px';
+			}, 500)
+		</script>
+	</body>
+
+</html>
