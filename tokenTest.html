@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="h5/js/jquery-1.11.3.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body>
+		<button id="btn">点我</button>
+		<script type="text/javascript">
+			var token = '';
+			$.ajax({
+				type: "post",
+				url: "https://testpay.boyuanpay.com/clothes/api/login.do",
+				data: '{mobile: "boyuan",password: "123456"}',
+				dataType: "json",
+				contentType: "application/json",
+				async: true,
+				success: function(res) {
+					token = res.data.token;
+				}
+			});
+			$('#btn').click(function() {
+				$.ajax({
+					type: "post",
+					url: "https://testpay.boyuanpay.com/clothes/api/clothesList.do",
+					data: '{page: "1",size: "2"}',
+					
+					dataType: "json",
+					contentType: "application/json",
+					async: true,
+					success: function(res) {
+						console.log(res);
+					}
+				});
+			})
+		</script>
+	</body>
+
+</html>
